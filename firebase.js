@@ -72,6 +72,7 @@ const firebaseConfig = {
   }
   
   function signOut() {
+        window.location.href = "index.html";
         alert("Logged out successfully");
   }
   
