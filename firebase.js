@@ -55,14 +55,7 @@ const firebaseConfig = {
           // Signed in
           var user_id = userCredential.user.uid;
           saveCon(full_name, client_gender, client_email, client_phn, user_id);
-          // first_name = "";
-          // last_name = "";
-          // con_email = "";
-          // con_phn = "";
-          // con_pass = "";
-          // con_cnfpass = "";
           form.reset();
-          // console.log("Registered Successfully  ");
         })
         .catch((error) => {
           var errorMessage = error.message;
@@ -72,20 +65,20 @@ const firebaseConfig = {
   }
   
   function signOut() {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      // Sign-out successful.
-      window.location.href = "index.html";
-      alert("Logged out successfully");
-    })
-    .catch((error) => {
-      // An error happened.
-      var errorMessage = error.message;
-      alert(errorMessage);
-    });
-}
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        // Sign-out successful.
+        window.location.href = "index.html";
+        alert("Logged out successfully");
+      })
+      .catch((error) => {
+        // An error happened.
+        var errorMessage = error.message;
+        alert(errorMessage);
+      });
+  }
   
   function saveCon(full_name, client_gender, client_email, client_phn, user_id) {
     const db = firebase.firestore();
