@@ -72,19 +72,7 @@ const firebaseConfig = {
   }
   
   function signOut() {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        // Sign-out successful.
-        window.location.href = "index.html";
         alert("Logged out successfully");
-      })
-      .catch((error) => {
-        // An error happened.
-        var errorMessage = error.message;
-        alert(errorMessage);
-      });
   }
   
   function saveCon(full_name, client_gender, client_email, client_phn, user_id) {
