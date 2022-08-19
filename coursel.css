@@ -2,10 +2,11 @@
     position: absolute;
     z-index: 10;
     width: 100%;
-    background-color: #75494933;
+    background-color: #e9ffbd4d;
   }
   .my-nav .container a:hover{
-    background-color: #5e2a2a;
+    background-color: #103f3c;
+    color: aliceblue;
   }
   .carousel-item {
     height: 100vh;
