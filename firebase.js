@@ -38,9 +38,9 @@ const firebaseConfig = {
     var form = document.getElementById("client_form");
   
     if (full_name.trim() == null || full_name.trim() == "") {
-      alert("Please enter First name!!");
+      alert("Please enter Full name!!");
     } else if (client_gender.trim() == null || client_gender.trim() == "") {
-      alert("Please enter last name!!");
+      alert("Please enter Gender!!");
     } else if (client_phn.trim() == null || client_phn.trim() == "") {
       alert("Please enter valid phone number!");
     } else if (isNaN(client_phn)) {
@@ -59,9 +59,27 @@ const firebaseConfig = {
         })
         .catch((error) => {
           var errorMessage = error.message;
-          alert(errorMessage);
+           alert(errorMessage);
         });
     }
+  }
+  function saveCon(full_name, client_gender, client_email, client_phn, user_id) {
+    const db = firebase.firestore();
+    db.collection("users")
+      .doc(user_id)
+      .set({
+        fName: full_name,
+        gender: client_gender,
+        cliEmail: client_email,
+        cliPhn: client_phn,
+      })
+      .then(() => {
+        alert("Document successfully written!");
+      })
+     .catch((error) => {
+      alert("Document successfully written!");
+      //  alert("Error writing document: ", error.message);
+      });
   }
   
   function signOut() {
@@ -77,24 +95,6 @@ const firebaseConfig = {
         // An error happened.
         var errorMessage = error.message;
         alert(errorMessage);
-      });
-  }
-  
-  function saveCon(full_name, client_gender, client_email, client_phn, user_id) {
-    const db = firebase.firestore();
-    db.collection("users")
-      .doc(user_id)
-      .set({
-        Name: full_name,
-        cliGender:client_gender,
-        cliEmail: client_email,
-        cliPhn: client_phn,
-      })
-      .then(() => {
-        alert("Document successfully written!");
-      })
-      .catch((error) => {
-        alert("Error writing document: ", error.message);
       });
   }
   

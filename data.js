@@ -1,4 +1,4 @@
-const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyAN7VUBgCwZLDxKY_C6ZrfQvaqkV6_U3XQ",
     authDomain: "healingminds-52967.firebaseapp.com",
     projectId: "healingminds-52967",
@@ -12,9 +12,9 @@ const firebaseConfig = {
     var full_name = document.getElementById("uname").value;
     var gender = document.getElementById("gender").value;
     var phone = document.getElementById("phone").value;
-    var User_email= document.getElementById("email").value;
+    var user_email= firebase.auth().currentUser.email;
+    var DOB=document.getElementById("birthday").value;
     var therapy= document.getElementById("therapy").value;
-    
     const db = firebase.firestore();
     
     if (full_name.trim() == "" || full_name.trim() == null) {
@@ -23,8 +23,6 @@ const firebaseConfig = {
          alert(" gender cannot be left empty");
     } else if(phone.trim()=="" || phone.trim()==null ){
          alert("phone number cannot be empty");
-    }else if(User_email.trim()=="" || User_email.trim()==null ){
-         alert("email cannot be empty");
     } else {
       db.collection("clients/")
         .doc()
@@ -32,21 +30,24 @@ const firebaseConfig = {
           name:  full_name,
           gender: gender,
           phone_no: phone,
-          email: User_email,
+          email: user_email,
+          dateof_birth:DOB,
           previous_therapist: therapy,
         })
         .then(() => {
           full_name = "";
           gender = "";
           phone = "";
-          User_email = "";
-          therapy = "",
+          user_email = "";
+          DOB ="";
+          therapy = "";
           alert("Document successfully written!");
         })
         .catch((error) => {
           alert("Error writing document: ", error);
         });
     }
+    window.location.href='pay.html';
   }
   
   

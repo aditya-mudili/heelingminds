@@ -37,7 +37,7 @@
 </head>
 <body>
     <div class="container" style="background-color: rgb(182, 227, 236);">
-        <div class="card text-left" style="width: 40rem">
+        <div class="card text-center">
           <div class="card-body">
             <h1 class="card-title"><img src="logo.png" alt="" width="70" height="80">FORM</h1>
             <form>
@@ -94,6 +94,16 @@
         </div>
       </div>
       <script src="data.js"></script>
+      <script>
+        firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            // ...
+          } else {
+            // window.open("login.html");
+            window.location.href = "index.html";
+          }
+        });
+      </script>
       <script
     src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
