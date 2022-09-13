@@ -31,7 +31,7 @@
           gender: gender,
           phone_no: phone,
           email: user_email,
-          dateof_birth:DOB,
+          dateof_birth: DOB,
           previous_therapist: therapy,
         })
         .then(() => {
@@ -47,7 +47,7 @@
           alert("Error writing document: ", error);
         });
     }
-    window.location.href='pay.html';
+    // window.location.href='pay.html';
   }
   
   

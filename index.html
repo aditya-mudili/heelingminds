@@ -33,7 +33,7 @@
       @import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap");
     </style>
   </head>
-
+  <script src="firebase.js"></script>
   <body>
     <div
       class="container d-flex justify-content-center align-items-center text-center"
@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>
-    <script src="firebase.js"></script>
+    
     <script>
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {

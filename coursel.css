@@ -2,11 +2,18 @@
     position: absolute;
     z-index: 10;
     width: 100%;
-    background-color: #e9ffbd4d;
+    background-color: #2184c64d;
   }
   .my-nav .container a:hover{
-    background-color: #103f3c;
+    background-color: #12083b;
     color: aliceblue;
+    border-radius: 30px;
+  }
+  .my-nav .container .navbar-collapse .navbar-nav a:hover{
+       color:aliceblue;
+  }
+  .my-nav .container .navbar-collapse .navbar-nav a{
+    color: black;
   }
   .carousel-item {
     height: 100vh;
